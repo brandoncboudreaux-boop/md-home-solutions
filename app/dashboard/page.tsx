@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { PlusCircle, DollarSign, TrendingUp, Users } from 'lucide-react'
-import QuickLogExpense from '@/components/QuickLogExpense'
+import QuickLogExpense from '../components/QuickLogExpense'
 
 export default function Dashboard() {
   const [showExpenseForm, setShowExpenseForm] = useState(false)
