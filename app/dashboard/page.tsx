@@ -1,8 +1,9 @@
+
 'use client'
 
-import { useEffect, useState } from 'react'
-import { PlusCircle, DollarSign, TrendingUp, Users } from 'lucide-react'
-import QuickLogExpense from '../components/QuickLogExpense'
+import { useState } from 'react'
+import { PlusCircle, TrendingUp } from 'lucide-react'
+import QuickLogExpense from './components/QuickLogExpense'   // ← Fixed import
 
 export default function Dashboard() {
   const [showExpenseForm, setShowExpenseForm] = useState(false)
@@ -55,9 +56,8 @@ export default function Dashboard() {
             </button>
 
             <button className="bg-white p-6 rounded-3xl shadow flex flex-col items-center hover:bg-emerald-50 active:scale-95 transition-all">
-              <DollarSign size={48} className="text-emerald-600 mb-3" />
+              <PlusCircle size={48} className="text-emerald-600 mb-3" />
               <span className="font-medium">Log Payment</span>
-              <span className="text-xs text-gray-500 mt-1">Received from lender</span>
             </button>
           </div>
         </div>
@@ -95,10 +95,10 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Floating Quick Log Button */}
+      {/* Floating Button */}
       <button 
         onClick={() => setShowExpenseForm(true)}
-        className="fixed bottom-20 right-6 bg-emerald-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-20 active:scale-90 transition-all"
+        className="fixed bottom-20 right-6 bg-emerald-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-20 active:scale-90"
       >
         <PlusCircle size={32} />
       </button>
@@ -109,7 +109,7 @@ export default function Dashboard() {
           <div className="bg-white w-full rounded-t-3xl p-6 max-h-[85vh] overflow-auto">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-semibold">Log New Expense</h3>
-              <button onClick={() => setShowExpenseForm(false)} className="text-gray-400 text-2xl">×</button>
+              <button onClick={() => setShowExpenseForm(false)} className="text-3xl text-gray-400">×</button>
             </div>
             
             <QuickLogExpense jobId="demo-job-1" />
